@@ -179,7 +179,8 @@ $.validator.addMethod('filesize', function (value, element, param) {
 
 	$("#salvar").on("click", function(){
         if($("#frm").valid()){
-            var formdata = new FormData($('#frm')[0]);
+            // Convete todo o formulário para um array que vira post, após enviado via ajax.
+            var formdata = new FormData($('#frm')[0]);  
             $.ajax({
                 type: 'POST',
                 url: 'serializar.php',
