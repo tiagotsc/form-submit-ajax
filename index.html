@@ -186,8 +186,8 @@ $.validator.addMethod('filesize', function (value, element, param) {
                 url: 'serializar.php',
                 data: formdata ,
                 //dataType: "json",
-                processData: false,
-                contentType: false,
+                processData: false, // Converte o array para string se definido como (true)
+                contentType: false, // Se habilitado como (true) não trabalha muito bem com input file
                 // Custom XMLHttpRequest
                 xhr: function() {
                     var myXhr = $.ajaxSettings.xhr();
